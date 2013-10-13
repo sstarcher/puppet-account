@@ -210,12 +210,8 @@ define account(
       type => 'ssh-rsa'
     }
 
-    # Returns '@', '@@' or '', depending on whether
-    # the resource is virtual/exported or not
-    $keys     = merge($ssh_keys, $overrides)
-    $sigil    = resource_sigil()
-    $resource = "${sigil}ssh_authorized_key"
-    create_resources($resource, $keys, $defaults)
+    $keys = merge($ssh_keys, $overrides)
+    create_resources('ssh_authorized_key', $keys, $defaults)
   }
 }
 
