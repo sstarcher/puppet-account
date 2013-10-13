@@ -212,10 +212,10 @@ define account(
 
     # Returns '@', '@@' or '', depending on whether
     # the resource is virtual/exported or not
-    $sigil = resource_sigil()
-
-    $keys = merge($ssh_keys, $overrides)
-    create_resources("${sigil}ssh_authorized_key", $keys, $defaults)
+    $keys     = merge($ssh_keys, $overrides)
+    $sigil    = resource_sigil()
+    $resource = "${sigil}ssh_authorized_key"
+    create_resources($resource, $keys, $defaults)
   }
 }
 
