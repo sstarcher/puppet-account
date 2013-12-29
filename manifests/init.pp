@@ -133,6 +133,11 @@ define account(
       $dir_ensure = directory
       $dir_owner  = $username
       $dir_group  = $primary_group
+      if $manage_home == true {
+        $dir_ensure = directory
+      }else{
+        $dir_ensure = absent        
+      }
       User[$title] -> File["${title}_home"] -> File["${title}_sshdir"]
     }
     absent: {
