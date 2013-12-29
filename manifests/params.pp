@@ -1,23 +1,6 @@
-# === Class: nexus::params
+# === Class:account::params
 #
-# module parameters.
-#
-# === Parameters
-#
-# NONE
-#
-# === Examples
-#
-# class nexus inherits nexus::params {
-# }
-#
-# === Authors
-#
-# Tom McLaughlin <tmclaughlin@hubspot.com>
-#
-# === Copyright
-#
-# Copyright 2013 Hubspot
+# Used to change default parameters.
 #
 class account::params($ssh_key = undef, $password = '!') {
 	
