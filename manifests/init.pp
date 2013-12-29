@@ -91,9 +91,9 @@
 # Copyright 2013 Tray Torrance, unless otherwise noted
 #
 define account(
-  $username = $title, $password = '!', $shell = '/bin/bash', $manage_home = true,
+  $username = $title, $password = $::account::params::password, $shell = '/bin/bash', $manage_home = true,
   $home_dir = undef, $create_group = true, $system = false, $uid = undef,
-  $ssh_key = undef, $ssh_key_type = 'ssh-rsa', $groups = [], $ensure = present,
+  $ssh_key =  $::account::params::ssh_key, $ssh_key_type = 'ssh-rsa', $groups = [], $ensure = present,
   $comment= "$title Puppet-managed User", $gid = 'users'
 ) {
 
