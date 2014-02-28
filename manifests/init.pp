@@ -94,7 +94,7 @@ define account(
   $username = $title, $password = $::account::params::password, $shell = '/bin/bash', $manage_home = true,
   $home_dir = undef, $create_group = true, $system = false, $uid = undef,
   $ssh_key =  $::account::params::ssh_key, $ssh_key_type = 'ssh-rsa', $groups = [], $ensure = present,
-  $comment= "$title Puppet-managed User", $gid = 'users'
+  $comment= "$title Puppet-managed User", $gid = 'users', $login_password = undef
 ) {
 
   if $home_dir == undef {
